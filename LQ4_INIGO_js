@@ -1,0 +1,33 @@
+// Matrix Printer
+
+const createMatrix = () => {
+    const userResponse = prompt("Do you want to create a Matrix? (yes/no)").toLowerCase();
+
+    if (userResponse === "yes") {
+        const limit1 = parseInt(prompt("Enter the limit for the first loop:"));
+        const limit2 = parseInt(prompt("Enter the limit for the second loop:"));
+        const limit3 = parseInt(prompt("Enter the limit for the third loop:"));
+
+        const string1 = prompt("Enter a word to print in the matrix:");
+        const string2 = prompt("Enter a character to print in the matrix:");
+        const string3 = prompt("Enter a number or symbol to print in the matrix:");
+
+        let matrix = "";
+
+        for (let i = 0; i < limit1; i++) {
+            for (let j = 0; j < limit2; j++) {
+                for (let k = 0; k < limit3; k++) {
+                    matrix += '${string1} ${string2} ${string3}' ;
+                }
+                matrix += "\n";
+            }
+            matrix += "\n";
+        }
+
+        console.log(matrix);
+    } else {
+        console.log("Thank you, re-run the program if you change your mind.");
+    }
+};
+
+createMatrix();
